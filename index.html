@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk & Cookies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000814;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #d4261c 0%, #ff3232 100%); /* Santa suit red */
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(212, 38, 28, 0.3);
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 38, 28, 0.4);
+        }
+
+        .gif-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .gif-container img {
+            width: 60%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        header {
+            text-align: left;
+            padding: 40px 40px;
+            background: linear-gradient(135deg, rgba(25, 161, 161, 0.15) 0%, rgba(212, 38, 28, 0.15) 100%); /* Turquoise to red gradient */
+            border-radius: 10px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(90deg, #19a1a1 0%, #1fbfbf 100%); /* Turquoise */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: #19a1a1;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(25, 161, 161, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(25, 161, 161, 0.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            padding: 20px;
+            background: rgba(193, 154, 107, 0.1); /* Cookie brown */
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(193, 154, 107, 0.1);
+        }
+
+        .feature h3 {
+            color: #d4261c; /* Santa suit red */
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 20px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+
+            .gif-container img {
+                width: 80%;
+            }
+
+            .nav-button {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <a href="#" class="nav-button">BUY $MILK</a>
+    
+        <div class="gif-container">
+            <img src="milkandcookies.png" alt="logo">
+        </div>
+    
+        <header>
+            <h1>MILK & COOKIES ($MILK)</h1>
+            <p>🍪 Introducing MILK & COOKIES ($MILK), the sweetest token in crypto! 🥛 Born from the spirit of Christmas treats and seasoned with a dash of holiday cheer, MILK & COOKIES is here to bring festive delights to the blockchain! 🎄</p>
+            <br>
+        </header>
+        <main>
+            <div class="features">
+                <div class="feature">
+                    <h3>Sweet Rewards</h3>
+                    <p>Just like milk and cookies, we're the perfect pair for your crypto portfolio. Join our community of cookie lovers!</p>
+                </div>
+                <div class="feature">
+                    <h3>Community Driven</h3>
+                    <p>Every cookie is better when shared! Our community is the heart of everything we do.</p>
+                </div>
+                <div class="feature">
+                    <h3>Holiday Magic</h3>
+                    <p>Spreading Christmas cheer one token at a time! Let's make this holiday season memorable!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Milk & Cookies. All rights reserved.</p>
+    </footer>
+</body>
+</html>
