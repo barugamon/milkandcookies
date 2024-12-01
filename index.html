@@ -26,59 +26,124 @@
             top: 20px;
             right: 20px;
             padding: 12px 24px;
-            background: linear-gradient(135deg, #d4261c 0%, #ff3232 100%); /* Santa suit red */
+            background: linear-gradient(135deg, #d4261c 0%, #ff3232 100%);
             border: none;
             border-radius: 25px;
             color: white;
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(212, 38, 28, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 38, 28, 0.3),
+                        0 0 30px rgba(212, 38, 28, 0.2);
             text-decoration: none;
+            overflow: hidden;
+            position: relative;
         }
 
         .nav-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 38, 28, 0.4);
+            box-shadow: 0 6px 20px rgba(212, 38, 28, 0.4),
+                        0 0 40px rgba(212, 38, 28, 0.3);
+        }
+
+        /* Floating hearts animation */
+        .nav-button::after {
+            content: '💕';
+            position: absolute;
+            opacity: 0;
+            animation: none;
+        }
+
+        .nav-button:hover::after {
+            animation: float-hearts 1s ease-out;
+            opacity: 1;
+        }
+
+        @keyframes float-hearts {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
         }
 
         .gif-container {
             text-align: center;
             margin: 20px 0;
+            position: relative;
         }
 
         .gif-container img {
             width: 60%;
             height: auto;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gif-container:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Cookie glow effect */
+        .gif-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 62%;
+            height: 102%;
+            background: radial-gradient(circle at center, rgba(193, 154, 107, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gif-container:hover::after {
+            opacity: 1;
         }
 
         header {
             text-align: left;
             padding: 40px 40px;
-            background: linear-gradient(135deg, rgba(25, 161, 161, 0.15) 0%, rgba(212, 38, 28, 0.15) 100%); /* Turquoise to red gradient */
+            background: linear-gradient(135deg, rgba(25, 161, 161, 0.15) 0%, rgba(212, 38, 28, 0.15) 100%);
             border-radius: 10px;
             margin-bottom: 40px;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header glow effect */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(25, 161, 161, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        header:hover::before {
+            opacity: 1;
         }
 
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(90deg, #19a1a1 0%, #1fbfbf 100%); /* Turquoise */
+            background: linear-gradient(90deg, #19a1a1 0%, #1fbfbf 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: #19a1a1;
-        }
-
-        .description {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(25, 161, 161, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(25, 161, 161, 0.1);
+            position: relative;
         }
 
         .features {
@@ -90,13 +155,38 @@
 
         .feature {
             padding: 20px;
-            background: rgba(193, 154, 107, 0.1); /* Cookie brown */
+            background: rgba(193, 154, 107, 0.1);
             border-radius: 10px;
             box-shadow: 0 2px 15px rgba(193, 154, 107, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(193, 154, 107, 0.2),
+                        0 0 30px rgba(193, 154, 107, 0.1);
+        }
+
+        /* Feature box hearts */
+        .feature::after {
+            content: '💝';
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover::after {
+            opacity: 0.7;
+            transform: translateY(0);
         }
 
         .feature h3 {
-            color: #d4261c; /* Santa suit red */
+            color: #d4261c;
             margin-bottom: 10px;
         }
 
@@ -130,6 +220,17 @@
                 padding: 10px 20px;
             }
         }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -137,12 +238,12 @@
         <a href="#" class="nav-button">BUY $MILKIES</a>
     
         <div class="gif-container">
-            <img src="milkandcookies.png" alt="logo">
+            <img src="milkcookies.png" alt="logo">
         </div>
     
         <header>
             <h1>MILK & COOKIES ($MILKIES)</h1>
-            <p>🍪 Introducing MILK & COOKIES ($MILKIES), the sweetest token in crypto! 🥛 Born from the spirit of Christmas treats and seasoned with a dash of holiday cheer, MILK & COOKIES is here to bring festive delights to the blockchain! 🎄</p>
+            <p>🍪 Introducing MILK & COOKIES ($MILKIES), the sweetest token in crypto! 🥛 Born from the spirit of Christmas treats and seasoned with a dash of holiday cheer, $MILKIES is here to bring festive delights to the blockchain! 🎄</p>
             <br>
         </header>
         <main>
